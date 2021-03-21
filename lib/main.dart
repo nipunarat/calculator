@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(
-      home: Catculator(),
+      home: Calculator(),
     ));
 
-class Catculator extends StatefulWidget {
+class Calculator extends StatefulWidget {
   @override
-  _CatculatorState createState() => _CatculatorState();
+  _CalculatorState createState() => _CalculatorState();
 }
 
-class _CatculatorState extends State<Catculator> {
+class _CalculatorState extends State<Calculator> {
+
+  String element = '';
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -27,7 +30,7 @@ class _CatculatorState extends State<Catculator> {
               child: Container(
                 color: Colors.black,
                 child: Text(
-                  '0123456789',
+                  '$element',
                   style: TextStyle(
                     fontSize: 30.0,
                     fontWeight: FontWeight.bold,
@@ -42,16 +45,32 @@ class _CatculatorState extends State<Catculator> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   RaisedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        element = 'C';
+                      });
+                    },
                     child: Text('C'),
                   ),
                   RaisedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        element = '<-';
+                      });
+                    },
                     child: Text('<-'),
                   ),
-                  RaisedButton(onPressed: () {}, child: Text('%')),
+                  RaisedButton(onPressed: () {
+                    setState(() {
+                      element = '%';
+                    });
+                  }, child: Text('%')),
                   RaisedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        element = '/';
+                      });
+                    },
                     child: Text('/'),
                   ),
                 ],
@@ -62,15 +81,31 @@ class _CatculatorState extends State<Catculator> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   RaisedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        element = '7';
+                      });
+                    },
                     child: Text('7'),
                   ),
                   RaisedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        element = '8';
+                      });
+                    },
                     child: Text('8'),
                   ),
-                  RaisedButton(onPressed: () {}, child: Text('9')),
-                  RaisedButton(onPressed: () {}, child: Text('X')),
+                  RaisedButton(onPressed: () {
+                    setState(() {
+                      element ='9';
+                    });
+                  }, child: Text('9')),
+                  RaisedButton(onPressed: () {
+                    setState(() {
+                      element = 'X';
+                    });
+                  }, child: Text('X')),
                 ],
               ),
             ),
@@ -79,15 +114,31 @@ class _CatculatorState extends State<Catculator> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   RaisedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        element = '4';
+                      });
+                    },
                     child: Text('4'),
                   ),
                   RaisedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        element = '5';
+                      });
+                    },
                     child: Text('5'),
                   ),
-                  RaisedButton(onPressed: () {}, child: Text('6')),
-                  RaisedButton(onPressed: () {}, child: Text('-')),
+                  RaisedButton(onPressed: () {
+                    setState(() {
+                      element = '6';
+                    });
+                  }, child: Text('6')),
+                  RaisedButton(onPressed: () {
+                    setState(() {
+                      element = '-';
+                    });
+                  }, child: Text('-')),
                 ],
               ),
             ),
@@ -96,15 +147,31 @@ class _CatculatorState extends State<Catculator> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   RaisedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        element = '1';
+                      });
+                    },
                     child: Text('1'),
                   ),
                   RaisedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        element = '2';
+                      });
+                    },
                     child: Text('2'),
                   ),
-                  RaisedButton(onPressed: () {}, child: Text('3')),
-                  RaisedButton(onPressed: () {}, child: Text('+')),
+                  RaisedButton(onPressed: () {
+                    setState(() {
+                      element = '3';
+                    });
+                  }, child: Text('3')),
+                  RaisedButton(onPressed: () {
+                    setState(() {
+                      element = '+';
+                    });
+                  }, child: Text('+')),
                 ],
               ),
             ),
@@ -113,15 +180,31 @@ class _CatculatorState extends State<Catculator> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   RaisedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        element = '+/-';
+                      });
+                    },
                     child: Text('+/-'),
                   ),
                   RaisedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        element = '0';
+                      });
+                    },
                     child: Text('0'),
                   ),
-                  RaisedButton(onPressed: () {}, child: Text('.')),
-                  RaisedButton(onPressed: () {}, child: Text('=')),
+                  RaisedButton(onPressed: () {
+                    setState(() {
+                      element = '.';
+                    });
+                  }, child: Text('.')),
+                  RaisedButton(onPressed: () {
+                    setState(() {
+                      element = '-';
+                    });
+                  }, child: Text('=')),
                 ],
               ),
             ),
